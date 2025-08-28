@@ -4,17 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>9kboss — Official Links</title>
-  <meta name="theme-color" content="#00e676" />
+  <meta name="theme-color" content="#D2A527" />
   <meta name="description" content="Official 9kboss links and working mirrors. Always updated, always accessible." />
   <style>
     :root{
-      --bg:#0a0d12; --bg2:#0d1117;
-      --surface:#161b22; --surface-2:#21262d;
-      --border:#30363d; --text:#f0f6fc; --muted:#8b949e;
-      --accent:#00e676; --link:#58a6ff;
-      --shadow: 0 8px 32px rgba(0,0,0,0.3);
+      --bg:#0F1008; --bg2:#1A1B0F;
+      --surface:#1E1F14; --surface-2:#252619;
+      --border:#3A3B2E; --text:#F4F5F0; --muted:#B8B9AC;
+      --accent:#D2A527; --accent-light:#E6B82A; --accent-dark:#B8941F;
+      --link:#4A90E2; --link-hover:#6BA0F2;
+      --shadow: 0 8px 32px rgba(0,0,0,0.4);
       --telegram: #0088cc; --whatsapp: #25d366; --instagram: #e4405f;
-      --website: #4ade80; --app: #f59e0b;
     }
     
     * { box-sizing: border-box; }
@@ -24,8 +24,8 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; 
       color:var(--text); 
       background:
-        radial-gradient(ellipse at top, rgba(0,79,159,0.3), transparent 50%),
-        radial-gradient(ellipse at bottom, rgba(0,39,118,0.2), transparent 50%),
+        radial-gradient(ellipse at top, rgba(210,165,39,0.08), transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(184,148,31,0.06), transparent 50%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       -webkit-font-smoothing:antialiased; 
       text-align:center;
@@ -35,183 +35,268 @@
     
     .wrap{max-width:900px; margin:0 auto; padding:32px 20px 60px}
     
-    /* Header */
-    .header{margin-bottom: 24px;}
-    .brand{margin:0 0 12px; position:relative; display:inline-block}
-    .logoText{
-      font-weight:800; 
-      font-size:36px; 
-      letter-spacing:-0.5px;
-      background: linear-gradient(135deg, var(--accent), #58a6ff);
+    /* LOGO - COMPLETELY TRANSPARENT NO BOX NO BACKGROUND */
+    .header{margin-bottom: 32px;}
+    .brand{margin:0 0 16px; position:relative; display:inline-block}
+    .logoContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      padding: 0 !important; /* NO PADDING */
+      border-radius: 0 !important; /* NO BORDER RADIUS */
+      background: transparent !important; /* NO BACKGROUND */
+      transition: none !important; /* NO TRANSITION */
+    }
+    .logoContainer:hover{
+      background: transparent !important; /* NO HOVER BACKGROUND */
+      transform: none !important; /* NO HOVER TRANSFORM */
+    }
+    .logo{
+      width: 280px !important;
+      height: auto !important;
+      border-radius: 0 !important; /* NO BORDER RADIUS */
+      box-shadow: none !important; /* NO BOX SHADOW */
+      background: transparent !important; /* NO BACKGROUND */
+      transition: none !important; /* NO TRANSITION */
+      display: block;
+      filter: none !important; /* NO FILTER */
+      outline: none !important; /* NO OUTLINE */
+      border: none !important; /* NO BORDER */
+    }
+    .logo:hover{
+      transform: none !important; /* NO HOVER TRANSFORM */
+      filter: none !important; /* NO HOVER FILTER */
+      box-shadow: none !important; /* NO HOVER SHADOW */
+      outline: none !important; /* NO HOVER OUTLINE */
+    }
+    
+    .logo-fallback{
+      display: none;
+      font-weight: 800; 
+      font-size: 42px; 
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       cursor: pointer;
     }
+    
     .tagline{
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 4px;
-      font-weight: 400;
+      font-size: 15px;
+      color: var(--accent);
+      margin-top: 12px;
+      font-weight: 600;
     }
     
-    /* Primary Section */
+    .editable{
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .editable:hover{
+      background: rgba(210,165,39,0.1);
+      padding: 3px 6px;
+      border-radius: 6px;
+    }
+    
     .primary{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 20px 0;
-      box-shadow: var(--shadow);
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 2px solid rgba(210,165,39,0.2);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 24px 0;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(210,165,39,0.1);
     }
     
     .siteName{
-      font-weight: 700; 
-      font-size: 18px; 
-      margin-bottom: 12px;
-      color: var(--accent);
+      font-weight: 800; 
+      font-size: 22px; 
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .urlBox{
       background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 18px;
+      border: 1px solid rgba(210,165,39,0.3);
+      border-radius: 12px;
+      padding: 18px 22px;
       margin: 0 auto;
-      max-width: 600px;
+      max-width: 650px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
     }
     
     .url{
       font-family: 'SF Mono', Monaco, monospace;
-      font-size: 13px;
-      color: var(--muted);
+      font-size: 14px;
+      color: var(--accent);
       user-select: all;
       word-break: break-all;
+      font-weight: 500;
     }
     
-    /* Controls */
     .controls{
       display: flex;
-      gap: 12px;
+      gap: 16px;
       align-items: center;
       justify-content: center;
-      margin: 20px auto 16px;
+      margin: 28px auto 20px;
       flex-wrap: wrap;
     }
     
     .btn{
-      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
       color: var(--text);
       border: 1px solid var(--border);
-      padding: 10px 20px;
-      border-radius: 6px;
+      padding: 12px 24px;
+      border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
-      font-size: 13px;
+      font-size: 14px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     
     .btn:hover{
-      background: linear-gradient(180deg, var(--surface-2), var(--surface));
+      background: linear-gradient(145deg, var(--surface-2), var(--surface));
       border-color: var(--accent);
       transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(210,165,39,0.2);
     }
     
     .btn-primary{
-      background: linear-gradient(180deg, var(--accent), #00d96a);
+      background: linear-gradient(145deg, var(--accent), var(--accent-dark));
       color: #000;
       font-weight: 700;
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(210,165,39,0.3);
     }
     
     .btn-primary:hover{
-      background: linear-gradient(180deg, #00d96a, var(--accent));
+      background: linear-gradient(145deg, var(--accent-light), var(--accent));
+      box-shadow: 0 6px 20px rgba(210,165,39,0.4);
     }
     
     .description{
-      max-width: 640px;
-      margin: 16px auto 24px;
-      font-size: 14px;
+      max-width: 700px;
+      margin: 20px auto 28px;
+      font-size: 15px;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
     
-    /* Section Headers */
-    .section-header{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 32px 0 16px;
-      padding: 0 4px;
+    .draggable-section{
+      margin: 28px 0;
+      transition: all 0.3s ease;
+    }
+    .draggable-section.dragging{
+      opacity: 0.5;
+      transform: scale(0.95);
     }
     
-    .section-icon{
-      width: 20px;
-      height: 20px;
+    .drag-handle{
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
       border-radius: 6px;
-      display: flex;
+      cursor: move;
+      display: none;
       align-items: center;
       justify-content: center;
       font-size: 12px;
+      margin-right: 10px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      color: #000;
+      font-weight: bold;
     }
     
-    .website-icon{
-      background: var(--website);
-      color: #000;
+    body.admin-mode .drag-handle{
+      display: flex !important;
     }
     
-    .app-icon{
-      background: var(--app);
-      color: #000;
+    body.admin-mode .draggable-section:hover .drag-handle{
+      opacity: 1;
     }
+    
+    .section-header{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 40px 0 20px;
+      padding: 0 6px;
+    }
+    
+    .section-icon{
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    .website-icon{background: linear-gradient(145deg, var(--accent), var(--accent-dark)); color: #000;}
+    .app-icon{background: linear-gradient(145deg, var(--accent-light), var(--accent)); color: #000;}
     
     .section-title{
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
+      font-size: 20px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--text), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin: 0;
     }
     
     .section-subtitle{
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
-      margin: 4px 0 0 32px;
+      margin: 6px 0 0 40px;
     }
     
     .card{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 1px solid rgba(210,165,39,0.2);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(210,165,39,0.05);
+      margin-bottom: 28px;
     }
     
     .row{
       display: grid;
-      grid-template-columns: 8px 1fr auto;
-      gap: 12px;
+      grid-template-columns: 10px 1fr auto;
+      gap: 16px;
       align-items: center;
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--border);
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(210,165,39,0.1);
       transition: all 0.2s ease;
       cursor: pointer;
+      position: relative;
     }
     
     .row:last-child{border-bottom: none;}
-    
     .row:hover{
-      background: rgba(255,255,255,0.03);
+      background: rgba(210,165,39,0.08);
+      transform: translateX(2px);
     }
+    .row.dragging{opacity: 0.5;}
     
     .dot{
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 4px rgba(0,230,118,0.6);
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      box-shadow: 0 0 6px rgba(210,165,39,0.6), 0 2px 4px rgba(0,0,0,0.2);
     }
     
     .domain-info{
@@ -219,16 +304,17 @@
     }
     
     .host{
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 700;
+      font-size: 16px;
       color: var(--text);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
     
     .urlSmall{
       font-family: 'SF Mono', monospace;
-      font-size: 12px;
-      color: var(--muted);
+      font-size: 13px;
+      color: var(--accent);
+      opacity: 0.8;
     }
     
     a{
@@ -237,92 +323,95 @@
       transition: color 0.2s ease;
     }
     
-    a:hover{
-      color: #79c0ff;
-    }
+    a:hover{color: var(--link-hover);}
     
     .actions{
       display: flex;
-      gap: 6px;
+      gap: 8px;
     }
     
     .chip{
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: 4px;
-      border: 1px solid var(--border);
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(210,165,39,0.3);
       background: var(--bg);
-      color: var(--muted);
+      color: var(--accent);
       cursor: pointer;
       transition: all 0.2s ease;
-      font-weight: 500;
+      font-weight: 600;
     }
     
     .chip:hover{
-      background: var(--surface-2);
-      color: var(--text);
+      background: var(--accent);
+      color: #000;
       border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(210,165,39,0.3);
     }
     
-    /* Social Links Section */
     .social-section{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 32px 0 20px;
-      box-shadow: var(--shadow);
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 2px solid rgba(210,165,39,0.2);
+      border-radius: 16px;
+      padding: 28px;
+      margin: 40px 0 24px;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(210,165,39,0.1);
     }
     
     .social-title{
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
     }
     
     .social-links{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
     }
     
     .social-link{
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
+      gap: 12px;
+      padding: 16px 20px;
       background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 12px;
       text-decoration: none;
       color: var(--text);
       transition: all 0.2s ease;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     
     .social-link:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      border-color: var(--accent);
     }
     
-    .social-link.telegram{border-color: var(--telegram);}
+    .social-link.telegram{border-left: 4px solid var(--telegram);}
     .social-link.telegram:hover{background: rgba(0,136,204,0.1);}
     
-    .social-link.whatsapp{border-color: var(--whatsapp);}
+    .social-link.whatsapp{border-left: 4px solid var(--whatsapp);}
     .social-link.whatsapp:hover{background: rgba(37,211,102,0.1);}
     
-    .social-link.instagram{border-color: var(--instagram);}
+    .social-link.instagram{border-left: 4px solid var(--instagram);}
     .social-link.instagram:hover{background: rgba(228,64,95,0.1);}
     
     .social-icon{
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       flex-shrink: 0;
     }
     
-    /* Admin Panel */
     .admin-panel {
       position: fixed;
       top: 0;
@@ -336,50 +425,87 @@
     }
     
     .admin-content {
-      max-width: 700px;
-      margin: 40px auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: var(--shadow);
+      max-width: 950px;
+      margin: 20px auto;
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(210,165,39,0.3);
     }
     
     .admin-header {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
     
     .admin-title {
-      color: var(--accent);
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    
+    .admin-nav {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      border-bottom: 2px solid rgba(210,165,39,0.2);
+      padding-bottom: 20px;
+    }
+    
+    .nav-tab {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+    
+    .nav-tab.active {
+      background: linear-gradient(145deg, var(--accent), var(--accent-dark));
+      color: #000;
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(210,165,39,0.3);
+    }
+    
+    .admin-section {
+      display: none;
+    }
+    
+    .admin-section.active {
+      display: block;
     }
     
     .admin-form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
     }
     
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
     }
     
     .form-label {
-      color: var(--text);
-      font-weight: 600;
-      font-size: 14px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 15px;
     }
     
     .admin-input {
       background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 16px;
+      border: 1px solid rgba(210,165,39,0.3);
+      border-radius: 10px;
+      padding: 14px 18px;
       color: var(--text);
       font-family: inherit;
       font-size: 14px;
@@ -388,123 +514,196 @@
     .admin-input:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(0,230,118,0.2);
+      box-shadow: 0 0 0 3px rgba(210,165,39,0.2);
+    }
+    
+    .admin-textarea {
+      min-height: 120px;
+      resize: vertical;
     }
     
     .input-row {
       display: flex;
-      gap: 8px;
+      gap: 12px;
     }
     
     .domain-list {
-      max-height: 250px;
+      max-height: 350px;
       overflow-y: auto;
       background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
+      border: 1px solid rgba(210,165,39,0.3);
+      border-radius: 10px;
+      padding: 20px;
     }
     
     .domain-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(210,165,39,0.2);
+      cursor: move;
     }
     
     .domain-item:last-child {
       border-bottom: none;
     }
     
-    .remove-btn {
-      background: #ef4444;
-      color: white;
-      border: none;
-      padding: 4px 8px;
-      border-radius: 4px;
+    .domain-item.dragging {
+      opacity: 0.5;
+    }
+    
+    .domain-details {
+      flex: 1;
+      text-align: left;
+    }
+    
+    .domain-name {
+      font-family: monospace;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 3px;
+      font-weight: 600;
+    }
+    
+    .domain-url {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--accent);
+      opacity: 0.8;
+    }
+    
+    .domain-controls {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .mini-btn {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 11px;
-      font-weight: 500;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+    
+    .mini-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+    
+    .mini-btn.edit {
+      background: #4A90E2;
+      color: white;
+    }
+    
+    .mini-btn.remove {
+      background: #FF4A4A;
+      color: white;
     }
     
     .admin-controls {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 24px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 2px solid rgba(210,165,39,0.2);
     }
     
     .btn-danger {
-      background: #ef4444;
+      background: linear-gradient(145deg, #FF4A4A, #E63946);
       color: white;
+      border-color: #FF4A4A;
     }
     
     .btn-danger:hover {
-      background: #dc2626;
+      background: linear-gradient(145deg, #E63946, #D62828);
     }
     
-    /* Footer */
+    .btn-success {
+      background: linear-gradient(145deg, #4CAF50, #45A049);
+      color: white;
+      border-color: #4CAF50;
+    }
+    
+    .btn-success:hover {
+      background: linear-gradient(145deg, #45A049, #3E8B41);
+    }
+    
+    .color-input {
+      width: 60px;
+      height: 50px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
     .footer{
-      margin-top: 32px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 2px solid rgba(210,165,39,0.2);
+      font-size: 14px;
       color: var(--muted);
     }
     
     .lastUpdated{
-      margin-top: 4px;
-      font-size: 11px;
+      margin-top: 6px;
+      font-size: 12px;
       opacity: 0.7;
+      color: var(--accent);
     }
     
-    /* Success Message */
     .success{
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--surface);
-      border: 1px solid var(--accent);
+      top: 24px;
+      right: 24px;
+      background: linear-gradient(145deg, var(--surface), var(--surface-2));
+      border: 2px solid var(--accent);
       color: var(--text);
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-weight: 500;
+      padding: 16px 24px;
+      border-radius: 10px;
+      font-weight: 600;
       transform: translateX(400px);
       transition: transform 0.3s ease;
-      z-index: 1000;
-      font-size: 13px;
-      box-shadow: var(--shadow);
+      z-index: 10000;
+      font-size: 14px;
+      box-shadow: var(--shadow), 0 0 20px rgba(210,165,39,0.3);
     }
     
     .success.show{transform: translateX(0);}
     
-    /* Responsive */
     @media (max-width: 768px){
       .wrap{padding: 24px 16px 48px}
-      .logoText{font-size: 28px}
-      .primary{padding: 16px 18px}
-      .urlBox{padding: 12px 16px}
-      .controls{gap: 8px; margin: 16px auto 12px;}
-      .btn{padding: 8px 16px; font-size: 12px}
-      .description{margin: 12px auto 20px; font-size: 13px;}
+      .logo{width: 220px;}
+      .logoContainer{padding: 12px;}
+      .primary{padding: 20px 24px}
+      .urlBox{padding: 14px 18px}
+      .controls{gap: 12px; margin: 20px auto 16px;}
+      .btn{padding: 10px 20px; font-size: 13px}
+      .description{margin: 16px auto 24px; font-size: 14px;}
       .social-links{grid-template-columns: 1fr;}
       .row{
-        grid-template-columns: 6px 1fr;
-        gap: 10px;
-        padding: 12px 16px;
+        grid-template-columns: 8px 1fr;
+        gap: 12px;
+        padding: 14px 18px;
       }
       .actions{
         grid-column: 2;
         justify-content: flex-start;
-        margin-top: 6px;
+        margin-top: 8px;
       }
-      .section-header{margin: 24px 0 12px;}
-      .section-title{font-size: 16px;}
-      .admin-content{margin: 20px; padding: 24px;}
+      .section-header{margin: 32px 0 16px;}
+      .section-title{font-size: 18px;}
+      .admin-content{margin: 10px; padding: 24px;}
       .admin-controls{justify-content: stretch;}
-      .admin-controls .btn{flex: 1;}
+      .admin-controls .btn{flex: 1; min-width: 140px;}
+      .admin-nav{flex-wrap: wrap;}
+      .nav-tab{font-size: 13px; padding: 10px 16px;}
     }
     
     #copyArea{position: fixed; left: -9999px; top: -9999px}
@@ -514,227 +713,390 @@
   <div class="wrap">
     <div class="header">
       <div class="brand">
-        <div class="logoText" id="logoText">9kboss</div>
-        <div class="tagline">Official Links & Working Mirrors</div>
+        <div class="logoContainer" id="logoContainer">
+          <!-- COMPLETELY TRANSPARENT LOGO - NO BOX, NO BACKGROUND, NO EFFECTS -->
+          <img src="https://i.postimg.cc/3wyw0DBX/C96-EB2-E0-C782-D1778-EA6-B6294-E6-A040-D-400x400.png" 
+               alt="9kboss Logo" 
+               class="logo" 
+               id="mainLogo"
+               onerror="handleLogoError(this)">
+          <div class="logo-fallback" id="logoFallback">9kboss</div>
+          <div class="tagline editable" id="tagline">Official Links & Working Mirrors</div>
+        </div>
       </div>
     </div>
     
     <div class="primary">
-      <div class="siteName" id="primaryDomain">www.just9000.com</div>
+      <div class="siteName editable" id="primaryDomain">9kboss.com</div>
       <div class="urlBox">
-        <div class="url" id="primaryUrl">https://www.just9000.com/</div>
+        <div class="url" id="primaryUrl">https://9kboss.com/?bonus=aug2025-offer-9kboss</div>
       </div>
     </div>
     
     <div class="controls">
       <button class="btn btn-primary" id="copyBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
         </svg>
         Copy All Links
       </button>
     </div>
     
-    <div class="description">
-      Access all official 9kBoss websites and app download links in one place. Updated daily with the latest working links.
+    <div class="description editable" id="mainDescription">
+      Access all official 9kBoss domains and working mirrors in one place. Updated daily with the latest working links.
     </div>
     
-    <!-- Official Website Section -->
-    <div class="section-header">
-      <div class="section-icon website-icon">🌐</div>
-      <div>
-        <div class="section-title">Official 9kboss Websites</div>
-        <div class="section-subtitle">Main gaming platforms for 9kboss</div>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://www.just9000.com/" target="_blank" rel="nofollow noopener">www.just9000.com</a>
+    <div id="sectionsContainer">
+      <div class="draggable-section" data-section="websites">
+        <div class="section-header">
+          <div class="drag-handle">⋮⋮</div>
+          <div class="section-icon website-icon">🌐</div>
+          <div>
+            <div class="section-title editable" data-text="websites-title">Official 9kboss Websites</div>
+            <div class="section-subtitle editable" data-text="websites-subtitle">Main gaming platforms for 9kboss</div>
           </div>
-          <div class="urlSmall">https://www.just9000.com/</div>
         </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://www.just9000.com/">Copy</button>
-          <a class="chip" href="https://www.just9000.com/" target="_blank" rel="nofollow noopener">Visit</a>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://www.just9000.vip/" target="_blank" rel="nofollow noopener">www.just9000.vip</a>
-          </div>
-          <div class="urlSmall">https://www.just9000.vip/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://www.just9000.vip/">Copy</button>
-          <a class="chip" href="https://www.just9000.vip/" target="_blank" rel="nofollow noopener">Visit</a>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://www.just9000.org/" target="_blank" rel="nofollow noopener">www.just9000.org</a>
-          </div>
-          <div class="urlSmall">https://www.just9000.org/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://www.just9000.org/">Copy</button>
-          <a class="chip" href="https://www.just9000.org/" target="_blank" rel="nofollow noopener">Visit</a>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://www.just9000.in/" target="_blank" rel="nofollow noopener">www.just9000.in</a>
-          </div>
-          <div class="urlSmall">https://www.just9000.in/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://www.just9000.in/">Copy</button>
-          <a class="chip" href="https://www.just9000.in/" target="_blank" rel="nofollow noopener">Visit</a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- App Download Section -->
-    <div class="section-header">
-      <div class="section-icon app-icon">📱</div>
-      <div>
-        <div class="section-title">9kboss App Downloads</div>
-        <div class="section-subtitle">Download official 9kboss mobile apps</div>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://ad.just9000.com/" target="_blank" rel="nofollow noopener">ad.just9000.com</a>
-          </div>
-          <div class="urlSmall">https://ad.just9000.com/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://ad.just9000.com/">Copy</button>
-          <a class="chip" href="https://ad.just9000.com/" target="_blank" rel="nofollow noopener">Download</a>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://ad.just9000.vip/" target="_blank" rel="nofollow noopener">ad.just9000.vip</a>
-          </div>
-          <div class="urlSmall">https://ad.just9000.vip/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://ad.just9000.vip/">Copy</button>
-          <a class="chip" href="https://ad.just9000.vip/" target="_blank" rel="nofollow noopener">Download</a>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://ad.just9000.org/" target="_blank" rel="nofollow noopener">ad.just9000.org</a>
-          </div>
-          <div class="urlSmall">https://ad.just9000.org/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://ad.just9000.org/">Copy</button>
-          <a class="chip" href="https://ad.just9000.org/" target="_blank" rel="nofollow noopener">Download</a>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="dot"></div>
-        <div class="domain-info">
-          <div class="host">
-            <a href="https://ad.just9000.in/" target="_blank" rel="nofollow noopener">ad.just9000.in</a>
-          </div>
-          <div class="urlSmall">https://ad.just9000.in/</div>
-        </div>
-        <div class="actions">
-          <button class="chip copy-btn" data-url="https://ad.just9000.in/">Copy</button>
-          <a class="chip" href="https://ad.just9000.in/" target="_blank" rel="nofollow noopener">Download</a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Social Links Section -->
-    <div class="social-section">
-      <div class="social-title">Official Social Media</div>
-      <div class="social-links">
-        <a href="https://t.me/india9kboss" target="_blank" class="social-link telegram">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-1.61 7.59c-.12.539-.44.674-.89.42l-2.46-1.815-1.19 1.146c-.131.131-.243.243-.5.243l.179-2.548 4.603-4.157c.2-.179-.044-.278-.31-.1l-5.686 3.583-2.45-.766c-.532-.166-.543-.532.111-.787l9.585-3.694c.444-.166.832.1.688.785z"/>
-          </svg>
-          Telegram Channel
-        </a>
         
-        <a href="https://whatsapp.com/channel/0029Vb48I4J0QeaiDl0vDg1t" target="_blank" class="social-link whatsapp">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
-          </svg>
-          WhatsApp Channel
-        </a>
+        <div class="card">
+          <div id="websitesList">
+            <div class="row" data-url="https://9kboss.com/">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss.com/" target="_blank" rel="nofollow noopener">9kboss.com</a>
+                </div>
+                <div class="urlSmall">https://9kboss.com/?bonus=aug2025-offer-9kboss</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss.com/?bonus=aug2025-offer-9kboss">Copy</button>
+                <a class="chip" href="https://9kboss.com/" target="_blank" rel="nofollow noopener">Visit</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss1.com/">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss1.com/" target="_blank" rel="nofollow noopener">9kboss1.com</a>
+                </div>
+                <div class="urlSmall">https://9kboss1.com/?bonus=aug2025-offer-9kboss</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss1.com/?bonus=aug2025-offer-9kboss">Copy</button>
+                <a class="chip" href="https://9kboss1.com/" target="_blank" rel="nofollow noopener">Visit</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss2.com/">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss2.com/" target="_blank" rel="nofollow noopener">9kboss2.com</a>
+                </div>
+                <div class="urlSmall">https://9kboss2.com/?bonus=aug2025-offer-9kboss</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss2.com/?bonus=aug2025-offer-9kboss">Copy</button>
+                <a class="chip" href="https://9kboss2.com/" target="_blank" rel="nofollow noopener">Visit</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss3.com/">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss3.com/" target="_blank" rel="nofollow noopener">9kboss3.com</a>
+                </div>
+                <div class="urlSmall">https://9kboss3.com/?bonus=aug2025-offer-9kboss</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss3.com/?bonus=aug2025-offer-9kboss">Copy</button>
+                <a class="chip" href="https://9kboss3.com/" target="_blank" rel="nofollow noopener">Visit</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss4.com/">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss4.com/" target="_blank" rel="nofollow noopener">9kboss4.com</a>
+                </div>
+                <div class="urlSmall">https://9kboss4.com/?bonus=aug2025-offer-9kboss</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss4.com/?bonus=aug2025-offer-9kboss">Copy</button>
+                <a class="chip" href="https://9kboss4.com/" target="_blank" rel="nofollow noopener">Visit</a>
+              </div>
+            </div>
+
+            <div class="row" data-url="https://9kboss5.com/">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss5.com/" target="_blank" rel="nofollow noopener">9kboss5.com</a>
+                </div>
+                <div class="urlSmall">https://9kboss5.com/?bonus=aug2025-offer-9kboss</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss5.com/?bonus=aug2025-offer-9kboss">Copy</button>
+                <a class="chip" href="https://9kboss5.com/" target="_blank" rel="nofollow noopener">Visit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="draggable-section" data-section="apps">
+        <div class="section-header">
+          <div class="drag-handle">⋮⋮</div>
+          <div class="section-icon app-icon">📱</div>
+          <div>
+            <div class="section-title editable" data-text="apps-title">Download Official Apps</div>
+            <div class="section-subtitle editable" data-text="apps-subtitle">Get 9kboss mobile apps for Android & iOS</div>
+          </div>
+        </div>
         
-        <a href="https://www.instagram.com/9kbossofficial1/" target="_blank" class="social-link instagram">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-          Instagram Official
-        </a>
+        <div class="card">
+          <div id="appsList">
+            <div class="row" data-url="https://9kboss.com/app">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss.com/app" target="_blank" rel="nofollow noopener">Download App (.com)</a>
+                </div>
+                <div class="urlSmall">https://9kboss.com/app</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss.com/app">Copy</button>
+                <a class="chip" href="https://9kboss.com/app" target="_blank" rel="nofollow noopener">Download</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss1.com/app">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss1.com/app" target="_blank" rel="nofollow noopener">Download App (.vip)</a>
+                </div>
+                <div class="urlSmall">https://9kboss1.com/app</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss1.com/app">Copy</button>
+                <a class="chip" href="https://9kboss1.com/app" target="_blank" rel="nofollow noopener">Download</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss2.com/app">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss2.com/app" target="_blank" rel="nofollow noopener">Download App (.org)</a>
+                </div>
+                <div class="urlSmall">https://9kboss2.com/app</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss2.com/app">Copy</button>
+                <a class="chip" href="https://9kboss2.com/app" target="_blank" rel="nofollow noopener">Download</a>
+              </div>
+            </div>
+            
+            <div class="row" data-url="https://9kboss3.com/app">
+              <div class="dot"></div>
+              <div class="domain-info">
+                <div class="host">
+                  <a href="https://9kboss3.com/app" target="_blank" rel="nofollow noopener">Download App (.in)</a>
+                </div>
+                <div class="urlSmall">https://9kboss3.com/app</div>
+              </div>
+              <div class="actions">
+                <button class="chip copy-btn" data-url="https://9kboss3.com/app">Copy</button>
+                <a class="chip" href="https://9kboss3.com/app" target="_blank" rel="nofollow noopener">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="draggable-section" data-section="social">
+        <div class="social-section">
+          <div class="drag-handle">⋮⋮</div>
+          <div class="social-title editable" data-text="social-title">Official Social Media & Apps</div>
+          <div class="social-links">
+            <a href="https://t.me/india9kboss" target="_blank" class="social-link telegram">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-1.61 7.59c-.12.539-.44.674-.89.42l-2.46-1.815-1.19 1.146c-.131.131-.243.243-.5.243l.179-2.548 4.603-4.157c.2-.179-.044-.278-.31-.1l-5.686 3.583-2.45-.766c-.532-.166-.543-.532.111-.787l9.585-3.694c.444-.166.832.1.688.785z"/>
+              </svg>
+              <span class="editable" data-text="telegram-text">Telegram Channel</span>
+            </a>
+            
+            <a href="https://whatsapp.com/channel/0029Vb48I4J0QeaiDl0vDg1t" target="_blank" class="social-link whatsapp">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+              </svg>
+              <span class="editable" data-text="whatsapp-text">WhatsApp Channel</span>
+            </a>
+            
+            <a href="https://www.instagram.com/9kbossofficial1/" target="_blank" class="social-link instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span class="editable" data-text="instagram-text">Instagram Official</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     
     <div class="footer">
-      <div>Made by Raone</div>
+      <div class="editable" data-text="footer-text">Made by Raone</div>
       <div class="lastUpdated" id="lastUpdated"></div>
     </div>
   </div>
   
-  <!-- Admin Panel -->
   <div class="admin-panel" id="adminPanel">
     <div class="admin-content">
       <div class="admin-header">
-        <div class="admin-title">🔐 9kboss Admin Panel</div>
-        <div style="color: var(--muted); font-size: 14px;">Manage domains, links and settings</div>
+        <div class="admin-title">🔧 Advanced 9kboss Admin Panel</div>
+        <div style="color: var(--muted); font-size: 16px;">Full control over website content, design, and links</div>
       </div>
       
-      <div class="admin-form">
-        <div class="form-group">
-          <label class="form-label">Add New Domain:</label>
-          <div class="input-row">
-            <input type="text" id="newDomain" class="admin-input" placeholder="e.g., www.just9000.net" style="flex: 1;">
-            <button onclick="addDomain()" class="btn btn-primary">Add Domain</button>
+      <div class="admin-nav">
+        <div class="nav-tab active" data-tab="content">📝 Content</div>
+        <div class="nav-tab" data-tab="links">🔗 Links</div>
+        <div class="nav-tab" data-tab="design">🎨 Design</div>
+        <div class="nav-tab" data-tab="settings">⚙️ Settings</div>
+      </div>
+      
+      <div class="admin-section active" id="content-tab">
+        <div class="admin-form">
+          <div class="form-group">
+            <label class="form-label">🖼️ Logo URL:</label>
+            <div class="input-row">
+              <input type="text" id="logoUrl" class="admin-input" value="https://i.postimg.cc/3wyw0DBX/C96-EB2-E0-C782-D1778-EA6-B6294-E6-A040-D-400x400.png" style="flex: 1;">
+              <button onclick="updateLogo()" class="btn btn-primary">Update Logo</button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">📝 Tagline:</label>
+            <input type="text" id="taglineText" class="admin-input" value="Official Links & Working Mirrors">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">📄 Main Description:</label>
+            <textarea id="mainDescText" class="admin-input admin-textarea">Access all official 9kBoss domains and working mirrors in one place. Updated daily with the latest working links.</textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">📋 Section Titles:</label>
+            <input type="text" id="websiteTitle" class="admin-input" value="Official 9kboss Websites" placeholder="Website Section Title" style="margin-bottom: 12px;">
+            <input type="text" id="appTitle" class="admin-input" value="Download Official Apps" placeholder="App Section Title" style="margin-bottom: 12px;">
+            <input type="text" id="socialTitle" class="admin-input" value="Official Social Media & Apps" placeholder="Social Section Title">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">👤 Footer Text:</label>
+            <input type="text" id="footerText" class="admin-input" value="Made by Raone">
           </div>
         </div>
-        
-        <div class="form-group">
-          <label class="form-label" id="domainCountLabel">Current Domains:</label>
-          <div class="domain-list" id="adminDomainList"></div>
+      </div>
+      
+      <div class="admin-section" id="links-tab">
+        <div class="admin-form">
+          <div class="form-group">
+            <label class="form-label">Add New Link:</label>
+            <div class="input-row">
+              <select id="linkType" class="admin-input">
+                <option value="website">Website</option>
+                <option value="app">App Download</option>
+              </select>
+              <input type="text" id="newLinkName" class="admin-input" placeholder="Domain name" style="flex: 1;">
+              <input type="text" id="newLinkUrl" class="admin-input" placeholder="Full URL" style="flex: 1;">
+              <button onclick="addNewLink()" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Website Links:</label>
+            <div class="domain-list" id="websiteLinksAdmin"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">App Download Links:</label>
+            <div class="domain-list" id="appLinksAdmin"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Social Media Links:</label>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div class="input-row">
+                <label style="width: 100px; color: var(--text);">Telegram:</label>
+                <input type="text" id="telegramLink" class="admin-input" value="https://t.me/india9kboss" style="flex: 1;">
+              </div>
+              <div class="input-row">
+                <label style="width: 100px; color: var(--text);">WhatsApp:</label>
+                <input type="text" id="whatsappLink" class="admin-input" value="https://whatsapp.com/channel/0029Vb48I4J0QeaiDl0vDg1t" style="flex: 1;">
+              </div>
+              <div class="input-row">
+                <label style="width: 100px; color: var(--text);">Instagram:</label>
+                <input type="text" id="instagramLink" class="admin-input" value="https://www.instagram.com/9kbossofficial1/" style="flex: 1;">
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div class="admin-controls">
-          <button onclick="saveChanges()" class="btn btn-primary">💾 Save Changes</button>
-          <button onclick="exportData()" class="btn">📊 Export JSON</button>
-          <button onclick="importData()" class="btn">📥 Import Data</button>
-          <button onclick="clearAllDomains()" class="btn btn-danger">🗑️ Clear All</button>
-          <button onclick="closeAdmin()" class="btn btn-danger">✖️ Close Admin</button>
+      </div>
+      
+      <div class="admin-section" id="design-tab">
+        <div class="admin-form">
+          <div class="form-group">
+            <label class="form-label">Color Scheme:</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <div>
+                <label style="color: var(--muted); font-size: 12px;">Accent Color:</label>
+                <input type="color" id="accentColor" class="color-input" value="#D2A527">
+              </div>
+              <div>
+                <label style="color: var(--muted); font-size: 12px;">Link Color:</label>
+                <input type="color" id="linkColor" class="color-input" value="#4A90E2">
+              </div>
+              <div>
+                <label style="color: var(--muted); font-size: 12px;">Background:</label>
+                <input type="color" id="bgColor" class="color-input" value="#0F1008">
+              </div>
+              <div>
+                <label style="color: var(--muted); font-size: 12px;">Surface:</label>
+                <input type="color" id="surfaceColor" class="color-input" value="#1E1F14">
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      
+      <div class="admin-section" id="settings-tab">
+        <div class="admin-form">
+          <div class="form-group">
+            <label class="form-label">Admin Credentials:</label>
+            <div class="input-row">
+              <input type="text" id="adminUsername" class="admin-input" value="Hitesh" placeholder="Username">
+              <input type="password" id="adminPassword" class="admin-input" value="@Hitesh" placeholder="Password">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Backup & Restore:</label>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button onclick="exportAllData()" class="btn btn-success">📊 Export All Data</button>
+              <button onclick="importAllData()" class="btn">📥 Import Data</button>
+              <button onclick="resetToDefaults()" class="btn btn-danger">🔄 Reset All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="admin-controls">
+        <button onclick="saveAllChanges()" class="btn btn-success">💾 Save All Changes</button>
+        <button onclick="previewChanges()" class="btn">👁️ Preview Changes</button>
+        <button onclick="closeAdmin()" class="btn btn-danger">✖️ Close Admin</button>
       </div>
     </div>
   </div>
@@ -744,76 +1106,130 @@
   <input type="file" id="importFile" accept=".json" style="display: none;">
   
   <script>
-    // Real Official Links - NO bonus parameters
-    let DOMAINS = [
-      'https://www.just9000.com/',
-      'https://www.just9000.vip/',
-      'https://www.just9000.org/',
-      'https://www.just9000.in/',
-      'https://ad.just9000.com/',
-      'https://ad.just9000.vip/',
-      'https://ad.just9000.org/',
-      'https://ad.just9000.in/'
-    ];
+    const CONFIG = {
+      logo: 'https://i.postimg.cc/3wyw0DBX/C96-EB2-E0-C782-D1778-EA6-B6294-E6-A040-D-400x400.png',
+      tagline: 'Official Links & Working Mirrors',
+      description: 'Access all official 9kBoss domains and working mirrors in one place. Updated daily with the latest working links.',
+      sections: {
+        websites: {
+          title: 'Official 9kboss Websites',
+          subtitle: 'Main gaming platforms for 9kboss',
+          links: [
+            {name: '9kboss.com', url: 'https://9kboss.com/?bonus=aug2025-offer-9kboss'},
+            {name: '9kboss1.com', url: 'https://9kboss1.com/?bonus=aug2025-offer-9kboss'},
+            {name: '9kboss2.com', url: 'https://9kboss2.com/?bonus=aug2025-offer-9kboss'},
+            {name: '9kboss3.com', url: 'https://9kboss3.com/?bonus=aug2025-offer-9kboss'},
+            {name: '9kboss4.com', url: 'https://9kboss4.com/?bonus=aug2025-offer-9kboss'},
+            {name: '9kboss5.com', url: 'https://9kboss5.com/?bonus=aug2025-offer-9kboss'}
+          ]
+        },
+        apps: {
+          title: 'Download Official Apps',
+          subtitle: 'Get 9kboss mobile apps for Android & iOS',
+          links: [
+            {name: 'Download App (.com)', url: 'https://9kboss.com/app'},
+            {name: 'Download App (.vip)', url: 'https://9kboss1.com/app'},
+            {name: 'Download App (.org)', url: 'https://9kboss2.com/app'},
+            {name: 'Download App (.in)', url: 'https://9kboss3.com/app'}
+          ]
+        },
+        social: {
+          title: 'Official Social Media & Apps',
+          telegram: 'https://t.me/india9kboss',
+          whatsapp: 'https://whatsapp.com/channel/0029Vb48I4J0QeaiDl0vDg1t',
+          instagram: 'https://www.instagram.com/9kbossofficial1/'
+        }
+      },
+      colors: {
+        accent: '#D2A527',
+        accentLight: '#E6B82A',
+        accentDark: '#B8941F',
+        link: '#4A90E2',
+        bg: '#0F1008',
+        surface: '#1E1F14'
+      },
+      admin: {
+        username: 'Hitesh',
+        password: '@Hitesh'
+      },
+      footer: 'Made by Raone'
+    };
     
-    // Admin credentials
-    const ADMIN_USERNAME = 'Hitesh';
-    const ADMIN_PASSWORD = '@Hitesh';
+    let currentTab = 'content';
     
-    const primaryUrl = document.getElementById('primaryUrl');
-    const primaryDomain = document.getElementById('primaryDomain');
-    const lastUpdated = document.getElementById('lastUpdated');
-    const copyBtn = document.getElementById('copyBtn');
-    const successMsg = document.getElementById('successMsg');
-    const copyArea = document.getElementById('copyArea');
-    const logoText = document.getElementById('logoText');
+    const elements = {
+      logo: document.getElementById('mainLogo'),
+      logoFallback: document.getElementById('logoFallback'),
+      tagline: document.getElementById('tagline'),
+      description: document.getElementById('mainDescription'),
+      primaryDomain: document.getElementById('primaryDomain'),
+      primaryUrl: document.getElementById('primaryUrl'),
+      copyBtn: document.getElementById('copyBtn'),
+      successMsg: document.getElementById('successMsg'),
+      copyArea: document.getElementById('copyArea'),
+      logoContainer: document.getElementById('logoContainer'),
+      lastUpdated: document.getElementById('lastUpdated'),
+      adminPanel: document.getElementById('adminPanel')
+    };
+    
+    function handleLogoError(img) {
+      console.log('Logo failed to load:', img.src);
+      img.style.display = 'none';
+      elements.logoFallback.style.display = 'block';
+    }
     
     function showSuccess(message) {
-      successMsg.textContent = message;
-      successMsg.classList.add('show');
-      setTimeout(() => successMsg.classList.remove('show'), 3000);
+      elements.successMsg.textContent = message;
+      elements.successMsg.classList.add('show');
+      setTimeout(() => elements.successMsg.classList.remove('show'), 3000);
     }
     
     async function copyToClipboard(text) {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
       } else {
-        copyArea.value = text;
-        copyArea.select();
+        elements.copyArea.value = text;
+        elements.copyArea.select();
         document.execCommand('copy');
       }
     }
     
+    function getAllLinks() {
+      const links = [];
+      CONFIG.sections.websites.links.forEach(link => links.push(link.url));
+      CONFIG.sections.apps.links.forEach(link => links.push(link.url));
+      return links;
+    }
+    
     async function copyAllLinks() {
-      const links = DOMAINS.join('\n');
+      const links = getAllLinks().join('\n');
       await copyToClipboard(links);
       
-      const originalText = copyBtn.innerHTML;
-      copyBtn.innerHTML = `
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      const originalText = elements.copyBtn.innerHTML;
+      elements.copyBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
         </svg>
-        Copied!
+        Copied Successfully!
       `;
       
       setTimeout(() => {
-        copyBtn.innerHTML = originalText;
-      }, 2000);
+        elements.copyBtn.innerHTML = originalText;
+      }, 2500);
       
-      showSuccess('All links copied!');
+      showSuccess('🎉 All links copied to clipboard!');
     }
     
-    // Admin Panel Functions
     function checkAdminAccess() {
-      const username = prompt('Enter username:');
-      if (username !== ADMIN_USERNAME) {
-        alert('Invalid username!');
+      const username = prompt('🔐 Enter admin username:');
+      if (username !== CONFIG.admin.username) {
+        alert('❌ Invalid username!');
         return false;
       }
       
-      const password = prompt('Enter password:');
-      if (password !== ADMIN_PASSWORD) {
-        alert('Invalid password!');
+      const password = prompt('🔑 Enter admin password:');
+      if (password !== CONFIG.admin.password) {
+        alert('❌ Invalid password!');
         return false;
       }
       
@@ -821,135 +1237,237 @@
     }
     
     function openAdmin() {
-      document.getElementById('adminPanel').style.display = 'block';
-      renderAdminDomainList();
+      elements.adminPanel.style.display = 'block';
+      document.body.classList.add('admin-mode');
+      loadAdminData();
     }
     
     function closeAdmin() {
-      document.getElementById('adminPanel').style.display = 'none';
+      elements.adminPanel.style.display = 'none';
+      document.body.classList.remove('admin-mode');
     }
     
-    function renderAdminDomainList() {
-      const list = document.getElementById('adminDomainList');
-      const countLabel = document.getElementById('domainCountLabel');
-      list.innerHTML = '';
-      
-      DOMAINS.forEach((domain, index) => {
-        const item = document.createElement('div');
-        item.className = 'domain-item';
-        item.innerHTML = `
-          <span style="color: var(--text); font-family: monospace;">${domain}</span>
-          <button onclick="removeDomain(${index})" class="remove-btn">Remove</button>
-        `;
-        list.appendChild(item);
+    function switchTab(tabName) {
+      document.querySelectorAll('.admin-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
       });
       
-      countLabel.textContent = `Current Domains (${DOMAINS.length} total):`;
+      document.getElementById(tabName + '-tab').classList.add('active');
+      document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+      currentTab = tabName;
     }
     
-    function addDomain() {
-      const input = document.getElementById('newDomain');
-      const domain = input.value.trim();
+    function loadAdminData() {
+      document.getElementById('logoUrl').value = CONFIG.logo;
+      document.getElementById('taglineText').value = CONFIG.tagline;
+      document.getElementById('mainDescText').value = CONFIG.description;
+      document.getElementById('websiteTitle').value = CONFIG.sections.websites.title;
+      document.getElementById('appTitle').value = CONFIG.sections.apps.title;
+      document.getElementById('socialTitle').value = CONFIG.sections.social.title;
+      document.getElementById('footerText').value = CONFIG.footer;
+      document.getElementById('telegramLink').value = CONFIG.sections.social.telegram;
+      document.getElementById('whatsappLink').value = CONFIG.sections.social.whatsapp;
+      document.getElementById('instagramLink').value = CONFIG.sections.social.instagram;
+      document.getElementById('accentColor').value = CONFIG.colors.accent;
+      document.getElementById('linkColor').value = CONFIG.colors.link;
+      document.getElementById('bgColor').value = CONFIG.colors.bg;
+      document.getElementById('surfaceColor').value = CONFIG.colors.surface;
+      document.getElementById('adminUsername').value = CONFIG.admin.username;
+      document.getElementById('adminPassword').value = CONFIG.admin.password;
       
-      if (!domain) {
-        alert('Please enter a domain URL!');
+      renderAdminLinkLists();
+    }
+    
+    function renderAdminLinkLists() {
+      const websiteList = document.getElementById('websiteLinksAdmin');
+      const appList = document.getElementById('appLinksAdmin');
+      
+      if (websiteList) {
+        websiteList.innerHTML = '';
+        CONFIG.sections.websites.links.forEach((link, index) => {
+          websiteList.appendChild(createAdminLinkItem(link, 'website', index));
+        });
+      }
+      
+      if (appList) {
+        appList.innerHTML = '';
+        CONFIG.sections.apps.links.forEach((link, index) => {
+          appList.appendChild(createAdminLinkItem(link, 'app', index));
+        });
+      }
+    }
+    
+    function createAdminLinkItem(link, type, index) {
+      const item = document.createElement('div');
+      item.className = 'domain-item';
+      item.innerHTML = `
+        <div class="domain-details">
+          <div class="domain-name">${link.name}</div>
+          <div class="domain-url">${link.url}</div>
+        </div>
+        <div class="domain-controls">
+          <button class="mini-btn edit" onclick="editLink('${type}', ${index})">Edit</button>
+          <button class="mini-btn" onclick="moveLinkUp('${type}', ${index})">↑</button>
+          <button class="mini-btn" onclick="moveLinkDown('${type}', ${index})">↓</button>
+          <button class="mini-btn remove" onclick="removeLink('${type}', ${index})">×</button>
+        </div>
+      `;
+      return item;
+    }
+    
+    function updateLogo() {
+      const newLogoUrl = document.getElementById('logoUrl').value;
+      if (newLogoUrl) {
+        CONFIG.logo = newLogoUrl;
+        elements.logo.src = newLogoUrl;
+        elements.logoFallback.style.display = 'none';
+        elements.logo.style.display = 'block';
+        showSuccess('🖼️ Logo updated successfully!');
+      }
+    }
+    
+    function addNewLink() {
+      const type = document.getElementById('linkType').value;
+      const name = document.getElementById('newLinkName').value.trim();
+      const url = document.getElementById('newLinkUrl').value.trim();
+      
+      if (!name || !url) {
+        alert('Please enter both name and URL!');
         return;
       }
       
-      if (DOMAINS.includes(domain)) {
-        alert('Domain already exists!');
-        return;
+      const newLink = {name, url};
+      CONFIG.sections[type === 'website' ? 'websites' : 'apps'].links.push(newLink);
+      
+      document.getElementById('newLinkName').value = '';
+      document.getElementById('newLinkUrl').value = '';
+      
+      renderAdminLinkLists();
+      showSuccess(`${name} added to ${type}s!`);
+    }
+    
+    function editLink(type, index) {
+      const section = CONFIG.sections[type === 'website' ? 'websites' : 'apps'];
+      const link = section.links[index];
+      
+      const newName = prompt('Edit domain name:', link.name);
+      if (newName && newName !== link.name) {
+        link.name = newName;
       }
       
-      if (!domain.includes('http')) {
-        alert('Please enter a complete URL with https://');
-        return;
+      const newUrl = prompt('Edit URL:', link.url);
+      if (newUrl && newUrl !== link.url) {
+        link.url = newUrl;
       }
       
-      DOMAINS.push(domain);
-      input.value = '';
-      renderAdminDomainList();
-      updateStaticList();
-      showSuccess(`${domain} added successfully!`);
+      renderAdminLinkLists();
+      showSuccess('Link updated!');
     }
     
-    function removeDomain(index) {
-      const domain = DOMAINS[index];
-      if (confirm(`Are you sure you want to remove "${domain}"?`)) {
-        DOMAINS.splice(index, 1);
-        renderAdminDomainList();
-        updateStaticList();
-        showSuccess(`Domain removed!`);
+    function removeLink(type, index) {
+      const section = CONFIG.sections[type === 'website' ? 'websites' : 'apps'];
+      const link = section.links[index];
+      
+      if (confirm(`Remove ${link.name}?`)) {
+        section.links.splice(index, 1);
+        renderAdminLinkLists();
+        showSuccess('Link removed!');
       }
     }
     
-    function updateStaticList() {
-      // This would need to be implemented to dynamically update the main list
-      // For now, we'll just show a message to refresh
-      showSuccess('Changes saved! Refresh page to see updates.');
+    function moveLinkUp(type, index) {
+      const section = CONFIG.sections[type === 'website' ? 'websites' : 'apps'];
+      if (index > 0) {
+        [section.links[index], section.links[index - 1]] = [section.links[index - 1], section.links[index]];
+        renderAdminLinkLists();
+        showSuccess('Link moved up!');
+      }
     }
     
-    function saveChanges() {
-      showSuccess('All changes saved successfully!');
+    function moveLinkDown(type, index) {
+      const section = CONFIG.sections[type === 'website' ? 'websites' : 'apps'];
+      if (index < section.links.length - 1) {
+        [section.links[index], section.links[index + 1]] = [section.links[index + 1], section.links[index]];
+        renderAdminLinkLists();
+        showSuccess('Link moved down!');
+      }
     }
     
-    function exportData() {
+    function saveAllChanges() {
+      CONFIG.tagline = document.getElementById('taglineText').value;
+      CONFIG.description = document.getElementById('mainDescText').value;
+      CONFIG.sections.websites.title = document.getElementById('websiteTitle').value;
+      CONFIG.sections.apps.title = document.getElementById('appTitle').value;
+      CONFIG.sections.social.title = document.getElementById('socialTitle').value;
+      CONFIG.footer = document.getElementById('footerText').value;
+      CONFIG.sections.social.telegram = document.getElementById('telegramLink').value;
+      CONFIG.sections.social.whatsapp = document.getElementById('whatsappLink').value;
+      CONFIG.sections.social.instagram = document.getElementById('instagramLink').value;
+      CONFIG.colors.accent = document.getElementById('accentColor').value;
+      CONFIG.colors.link = document.getElementById('linkColor').value;
+      CONFIG.colors.bg = document.getElementById('bgColor').value;
+      CONFIG.colors.surface = document.getElementById('surfaceColor').value;
+      CONFIG.admin.username = document.getElementById('adminUsername').value;
+      CONFIG.admin.password = document.getElementById('adminPassword').value;
+      
+      applyAllChanges();
+      showSuccess('💾 All changes saved successfully!');
+    }
+    
+    function applyAllChanges() {
+      elements.tagline.textContent = CONFIG.tagline;
+      elements.description.textContent = CONFIG.description;
+      
+      const root = document.documentElement;
+      root.style.setProperty('--accent', CONFIG.colors.accent);
+      root.style.setProperty('--link', CONFIG.colors.link);
+      root.style.setProperty('--bg', CONFIG.colors.bg);
+      root.style.setProperty('--surface', CONFIG.colors.surface);
+      
+      elements.primaryUrl.textContent = CONFIG.sections.websites.links[0]?.url || '';
+      elements.primaryDomain.textContent = CONFIG.sections.websites.links[0]?.name || '';
+    }
+    
+    function exportAllData() {
       const data = {
-        domains: DOMAINS,
+        config: CONFIG,
         exportDate: new Date().toISOString(),
-        totalDomains: DOMAINS.length
+        version: '2.0'
       };
       
       const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `9kboss-domains-${new Date().toISOString().split('T')[0]}.json`;
+      a.download = `9kboss-complete-backup-${new Date().toISOString().split('T')[0]}.json`;
       a.click();
       URL.revokeObjectURL(url);
-      showSuccess('Domain data exported successfully!');
+      showSuccess('📊 Complete backup exported successfully!');
     }
     
-    function importData() {
+    function importAllData() {
       document.getElementById('importFile').click();
     }
     
-    function clearAllDomains() {
-      if (confirm('⚠️ This will remove ALL domains! Are you absolutely sure?')) {
-        if (confirm('This action cannot be undone. Continue?')) {
-          DOMAINS = [];
-          renderAdminDomainList();
-          showSuccess('All domains cleared!');
-        }
+    function resetToDefaults() {
+      if (confirm('⚠️ This will reset ALL settings to default! Continue?')) {
+        location.reload();
       }
     }
     
-    // File import handler
-    document.getElementById('importFile').addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        try {
-          const data = JSON.parse(e.target.result);
-          if (data.domains && Array.isArray(data.domains)) {
-            DOMAINS = data.domains;
-            renderAdminDomainList();
-            showSuccess(`Imported ${data.domains.length} domains successfully!`);
-          } else {
-            alert('Invalid file format!');
-          }
-        } catch (error) {
-          alert('Error reading file: ' + error.message);
-        }
-      };
-      reader.readAsText(file);
-    });
+    function previewChanges() {
+      saveAllChanges();
+      closeAdmin();
+      showSuccess('👁️ Preview applied! Triple-click logo to return to admin.');
+    }
     
-    // Admin access - Triple click logo
+    elements.copyBtn.addEventListener('click', copyAllLinks);
+    
     let clickCount = 0;
-    logoText.addEventListener('click', () => {
+    elements.logoContainer.addEventListener('click', () => {
       clickCount++;
       setTimeout(() => clickCount = 0, 600);
       
@@ -960,7 +1478,6 @@
       }
     });
     
-    // Admin access - Keyboard shortcut Ctrl+Shift+A
     document.addEventListener('keydown', (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === 'A') {
         e.preventDefault();
@@ -970,44 +1487,66 @@
       }
     });
     
-    // Admin access - URL parameter
     if (window.location.search.includes('admin=true')) {
       if (checkAdminAccess()) {
         openAdmin();
       }
     }
     
-    // Event listeners
-    copyBtn.addEventListener('click', copyAllLinks);
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        switchTab(tab.dataset.tab);
+      });
+    });
     
-    // Add event listeners to static copy buttons
+    document.getElementById('importFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data.config) {
+            Object.assign(CONFIG, data.config);
+            loadAdminData();
+            applyAllChanges();
+            showSuccess(`📥 Data imported successfully!`);
+          } else {
+            alert('Invalid file format!');
+          }
+        } catch (error) {
+          alert('Error reading file: ' + error.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+    
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', async (e) => {
         e.stopPropagation();
         const url = btn.getAttribute('data-url');
         await copyToClipboard(url);
-        btn.textContent = '✓';
-        setTimeout(() => btn.textContent = 'Copy', 1200);
+        btn.textContent = '✅';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
       });
     });
     
-    // Add event listeners to static rows
     document.querySelectorAll('.row').forEach((row) => {
       row.addEventListener('click', async (e) => {
         if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
         const copyBtn = row.querySelector('.copy-btn');
         const url = copyBtn.getAttribute('data-url');
         await copyToClipboard(url);
-        const domain = url.replace('https://', '').replace('/', '');
-        showSuccess(`${domain} copied!`);
+        const domain = url.replace('https://', '').split('/')[0];
+        showSuccess(`📋 ${domain} copied!`);
       });
     });
     
-    // Initialize
     function init() {
       const now = new Date();
       const opts = {year:'numeric', month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'};
-      lastUpdated.textContent = `Last updated: ${now.toLocaleString(undefined, opts)}`;
+      elements.lastUpdated.textContent = `Last updated: ${now.toLocaleString(undefined, opts)}`;
     }
     
     init();
