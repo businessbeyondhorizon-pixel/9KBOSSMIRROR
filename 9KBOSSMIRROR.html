@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>9kboss — Official Links</title>
+  <meta name="theme-color" content="#00e676" />
+  <meta name="description" content="Official 9kboss links and working mirrors. Always updated, always accessible." />
+  <style>
+    :root{
+      --bg:#0a0d12; --bg2:#0d1117;
+      --surface:#161b22; --surface-2:#21262d;
+      --border:#30363d; --text:#f0f6fc; --muted:#8b949e;
+      --accent:#00e676; --link:#58a6ff;
+      --shadow: 0 8px 32px rgba(0,0,0,0.3);
+      --telegram: #0088cc; --whatsapp: #25d366; --instagram: #e4405f;
+    }
+    
+    * { box-sizing: border-box; }
+    
+    body{
+      margin:0; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; 
+      color:var(--text); 
+      background:
+        radial-gradient(ellipse at top, rgba(0,79,159,0.3), transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(0,39,118,0.2), transparent 50%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      -webkit-font-smoothing:antialiased; 
+      text-align:center;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    
+    .wrap{max-width:900px; margin:0 auto; padding:32px 20px 60px}
+    
+    /* Header */
+    .header{margin-bottom: 24px;}
+    .brand{margin:0 0 12px; position:relative; display:inline-block}
+    .logoText{
+      font-weight:800; 
+      font-size:36px; 
+      letter-spacing:-0.5px;
+      background: linear-gradient(135deg, var(--accent), #58a6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      cursor: pointer;
+    }
+    .tagline{
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    
+    /* Primary Section */
+    .primary{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      box-shadow: var(--shadow);
+    }
+    
+    .siteName{
+      font-weight: 700; 
+      font-size: 18px; 
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    
+    .urlBox{
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    
+    .url{
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 13px;
+      color: var(--muted);
+      user-select: all;
+      word-break: break-all;
+    }
+    
+    /* Controls */
+    .controls{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto 16px;
+      flex-wrap: wrap;
+    }
+    
+    .btn{
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn:hover{
+      background: linear-gradient(180deg, var(--surface-2), var(--surface));
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    
+    .btn-primary{
+      background: linear-gradient(180deg, var(--accent), #00d96a);
+      color: #000;
+      font-weight: 700;
+    }
+    
+    .btn-primary:hover{
+      background: linear-gradient(180deg, #00d96a, var(--accent));
+    }
+    
+    .description{
+      max-width: 640px;
+      margin: 16px auto 24px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    
+    /* Domain List */
+    .domains-section{
+      margin: 24px 0;
+    }
+    
+    .section-title{
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .row{
+      display: grid;
+      grid-template-columns: 8px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .row:last-child{border-bottom: none;}
+    
+    .row:hover{
+      background: rgba(255,255,255,0.03);
+    }
+    
+    .dot{
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 4px rgba(0,230,118,0.6);
+    }
+    
+    .domain-info{
+      text-align: left;
+    }
+    
+    .host{
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    
+    .urlSmall{
+      font-family: 'SF Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    
+    a{
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    a:hover{
+      color: #79c0ff;
+    }
+    
+    .actions{
+      display: flex;
+      gap: 6px;
+    }
+    
+    .chip{
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+    
+    .chip:hover{
+      background: var(--surface-2);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    
+    /* Social Links Section - At bottom */
+    .social-section{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 32px 0 20px;
+      box-shadow: var(--shadow);
+    }
+    
+    .social-title{
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    
+    .social-links{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .social-link{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s ease;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .social-link:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .social-link.telegram{border-color: var(--telegram);}
+    .social-link.telegram:hover{background: rgba(0,136,204,0.1);}
+    
+    .social-link.whatsapp{border-color: var(--whatsapp);}
+    .social-link.whatsapp:hover{background: rgba(37,211,102,0.1);}
+    
+    .social-link.instagram{border-color: var(--instagram);}
+    .social-link.instagram:hover{background: rgba(228,64,95,0.1);}
+    
+    .social-icon{
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    
+    /* Admin Panel */
+    .admin-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      display: none;
+      overflow-y: auto;
+    }
+    
+    .admin-content {
+      max-width: 700px;
+      margin: 40px auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    
+    .admin-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    .admin-title {
+      color: var(--accent);
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    
+    .admin-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-label {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .admin-input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+    }
+    
+    .admin-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0,230,118,0.2);
+    }
+    
+    .input-row {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .domain-list {
+      max-height: 250px;
+      overflow-y: auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    
+    .domain-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .domain-item:last-child {
+      border-bottom: none;
+    }
+    
+    .remove-btn {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    
+    .admin-controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+    
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+    
+    /* Footer */
+    .footer{
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    
+    .lastUpdated{
+      margin-top: 4px;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+    
+    /* Success Message */
+    .success{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--surface);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      font-size: 13px;
+      box-shadow: var(--shadow);
+    }
+    
+    .success.show{transform: translateX(0);}
+    
+    /* Responsive */
+    @media (max-width: 768px){
+      .wrap{padding: 24px 16px 48px}
+      .logoText{font-size: 28px}
+      .primary{padding: 16px 18px}
+      .urlBox{padding: 12px 16px}
+      .controls{gap: 8px; margin: 16px auto 12px;}
+      .btn{padding: 8px 16px; font-size: 12px}
+      .description{margin: 12px auto 20px; font-size: 13px;}
+      .social-links{grid-template-columns: 1fr;}
+      .row{
+        grid-template-columns: 6px 1fr;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      .actions{
+        grid-column: 2;
+        justify-content: flex-start;
+        margin-top: 6px;
+      }
+      .section-title{text-align: center; font-size: 15px;}
+      .domains-section{margin: 20px 0;}
+      .admin-content{margin: 20px; padding: 24px;}
+      .admin-controls{justify-content: stretch;}
+      .admin-controls .btn{flex: 1;}
+    }
+    
+    #copyArea{position: fixed; left: -9999px; top: -9999px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="logoText" id="logoText">9kboss</div>
+        <div class="tagline">Official Links & Working Mirrors</div>
+      </div>
+    </div>
+    
+    <div class="primary">
+      <div class="siteName" id="primaryDomain">just9000.com</div>
+      <div class="urlBox">
+        <div class="url" id="primaryUrl"></div>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button class="btn btn-primary" id="copyBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+        </svg>
+        Copy All Links
+      </button>
+      <button class="btn" id="toggleParam">Hide Query Parameters</button>
+    </div>
+    
+    <div class="description">
+      Access all official 9kBoss domains and working mirrors in one place. Updated daily with the latest working links.
+    </div>
+    
+    <div class="domains-section">
+      <div class="section-title">All Working Links</div>
+      <div class="card">
+        <div id="list">
+          <!-- Official Website Links First -->
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://just9000.com/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">just9000.com</a>
+              </div>
+              <div class="urlSmall">https://just9000.com/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://just9000.com/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://just9000.com/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://just9000.vip/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">just9000.vip</a>
+              </div>
+              <div class="urlSmall">https://just9000.vip/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://just9000.vip/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://just9000.vip/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://just9000.org/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">just9000.org</a>
+              </div>
+              <div class="urlSmall">https://just9000.org/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://just9000.org/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://just9000.org/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://just9000.in/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">just9000.in</a>
+              </div>
+              <div class="urlSmall">https://just9000.in/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://just9000.in/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://just9000.in/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <!-- App Download Links Below -->
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://ad.just9000.com/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">ad.just9000.com</a>
+              </div>
+              <div class="urlSmall">https://ad.just9000.com/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://ad.just9000.com/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://ad.just9000.com/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://ad.just9000.vip/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">ad.just9000.vip</a>
+              </div>
+              <div class="urlSmall">https://ad.just9000.vip/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://ad.just9000.vip/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://ad.just9000.vip/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://ad.just9000.org/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">ad.just9000.org</a>
+              </div>
+              <div class="urlSmall">https://ad.just9000.org/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://ad.just9000.org/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://ad.just9000.org/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="dot"></div>
+            <div class="domain-info">
+              <div class="host">
+                <a href="https://ad.just9000.in/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">ad.just9000.in</a>
+              </div>
+              <div class="urlSmall">https://ad.just9000.in/?bonus=aug2025-offer-9kboss</div>
+            </div>
+            <div class="actions">
+              <button class="chip copy-btn" data-url="https://ad.just9000.in/?bonus=aug2025-offer-9kboss">Copy</button>
+              <a class="chip" href="https://ad.just9000.in/?bonus=aug2025-offer-9kboss" target="_blank" rel="nofollow noopener">Open</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Social Links Section - At bottom -->
+    <div class="social-section">
+      <div class="social-title">Official Social Media</div>
+      <div class="social-links">
+        <a href="https://t.me/india9kboss" target="_blank" class="social-link telegram">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-1.61 7.59c-.12.539-.44.674-.89.42l-2.46-1.815-1.19 1.146c-.131.131-.243.243-.5.243l.179-2.548 4.603-4.157c.2-.179-.044-.278-.31-.1l-5.686 3.583-2.45-.766c-.532-.166-.543-.532.111-.787l9.585-3.694c.444-.166.832.1.688.785z"/>
+          </svg>
+          Telegram Channel
+        </a>
+        
+        <a href="https://whatsapp.com/channel/0029Vb48I4J0QeaiDl0vDg1t" target="_blank" class="social-link whatsapp">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+          </svg>
+          WhatsApp Channel
+        </a>
+        
+        <a href="https://www.instagram.com/9kbossofficial1/" target="_blank" class="social-link instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram Official
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div>Made by Raone</div>
+      <div class="lastUpdated" id="lastUpdated"></div>
+    </div>
+  </div>
+  
+  <!-- Admin Panel -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-content">
+      <div class="admin-header">
+        <div class="admin-title">🔐 9kboss Admin Panel</div>
+        <div style="color: var(--muted); font-size: 14px;">Manage domains, links and settings</div>
+      </div>
+      
+      <div class="admin-form">
+        <div class="form-group">
+          <label class="form-label">Add New Domain:</label>
+          <div class="input-row">
+            <input type="text" id="newDomain" class="admin-input" placeholder="e.g., just9000.net" style="flex: 1;">
+            <button onclick="addDomain()" class="btn btn-primary">Add Domain</button>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Bonus Parameter:</label>
+          <input type="text" id="bonusParam" class="admin-input" value="bonus=aug2025-offer-9kboss">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" id="domainCountLabel">Current Domains:</label>
+          <div class="domain-list" id="adminDomainList"></div>
+        </div>
+        
+        <div class="admin-controls">
+          <button onclick="saveChanges()" class="btn btn-primary">💾 Save Changes</button>
+          <button onclick="exportData()" class="btn">📊 Export JSON</button>
+          <button onclick="importData()" class="btn">📥 Import Data</button>
+          <button onclick="clearAllDomains()" class="btn btn-danger">🗑️ Clear All</button>
+          <button onclick="closeAdmin()" class="btn btn-danger">✖️ Close Admin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="success" id="successMsg"></div>
+  <textarea id="copyArea" aria-hidden="true"></textarea>
+  <input type="file" id="importFile" accept=".json" style="display: none;">
+  
+  <script>
+    const BONUS_PARAM_DEFAULT = 'bonus=aug2025-offer-9kboss';
+    let BONUS_PARAM = BONUS_PARAM_DEFAULT;
+    
+    // Real Official Links - Websites first, then app download links
+    let DOMAINS = [
+      'just9000.com','just9000.vip','just9000.org','just9000.in',
+      'ad.just9000.com','ad.just9000.vip','ad.just9000.org','ad.just9000.in'
+    ];
+    
+    // Admin credentials
+    const ADMIN_USERNAME = 'Hitesh';
+    const ADMIN_PASSWORD = '@Hitesh';
+    
+    let showParam = true;
+    
+    const primaryUrl = document.getElementById('primaryUrl');
+    const primaryDomain = document.getElementById('primaryDomain');
+    const listEl = document.getElementById('list');
+    const lastUpdated = document.getElementById('lastUpdated');
+    const copyBtn = document.getElementById('copyBtn');
+    const toggleBtn = document.getElementById('toggleParam');
+    const successMsg = document.getElementById('successMsg');
+    const copyArea = document.getElementById('copyArea');
+    const logoText = document.getElementById('logoText');
+    
+    function fullUrl(domain) { return `https://${domain}/?${BONUS_PARAM}` }
+    function baseUrl(domain) { return `https://${domain}/` }
+    function displayUrl(domain) { return showParam ? fullUrl(domain) : baseUrl(domain) }
+    
+    function showSuccess(message) {
+      successMsg.textContent = message;
+      successMsg.classList.add('show');
+      setTimeout(() => successMsg.classList.remove('show'), 3000);
+    }
+    
+    async function copyToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        copyArea.value = text;
+        copyArea.select();
+        document.execCommand('copy');
+      }
+    }
+    
+    function updatePrimary() {
+      const domain = DOMAINS[0]; // First domain (just9000.com)
+      primaryDomain.textContent = domain;
+      primaryUrl.textContent = displayUrl(domain);
+    }
+    
+    // Dynamic row creation functionality remains the same but uses new DOMAINS array
+    function renderDynamicList() {
+      listEl.innerHTML = '';
+      DOMAINS.forEach(domain => {
+        const row = createDomainRow(domain);
+        listEl.appendChild(row);
+      });
+    }
+    
+    function createDomainRow(domain) {
+      const full = fullUrl(domain);
+      const display = displayUrl(domain);
+      
+      const row = document.createElement('div');
+      row.className = 'row';
+      row.innerHTML = `
+        <div class="dot"></div>
+        <div class="domain-info">
+          <div class="host">
+            <a href="${full}" target="_blank" rel="nofollow noopener">${domain}</a>
+          </div>
+          <div class="urlSmall">${display}</div>
+        </div>
+        <div class="actions">
+          <button class="chip copy-btn" data-url="${full}">Copy</button>
+          <a class="chip" href="${full}" target="_blank" rel="nofollow noopener">Open</a>
+        </div>`;
+      
+      row.addEventListener('click', async (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+        await copyToClipboard(full);
+        showSuccess(`${domain} copied!`);
+      });
+      
+      const copyButton = row.querySelector('.copy-btn');
+      copyButton.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        await copyToClipboard(full);
+        copyButton.textContent = '✓';
+        setTimeout(() => copyButton.textContent = 'Copy', 1200);
+      });
+      
+      return row;
+    }
+    
+    async function copyAllLinks() {
+      const links = DOMAINS.map(fullUrl).join('\n');
+      await copyToClipboard(links);
+      
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+        Copied!
+      `;
+      
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+      }, 2000);
+      
+      showSuccess('All links copied!');
+    }
+    
+    // Admin Panel Functions
+    function checkAdminAccess() {
+      const username = prompt('Enter username:');
+      if (username !== ADMIN_USERNAME) {
+        alert('Invalid username!');
+        return false;
+      }
+      
+      const password = prompt('Enter password:');
+      if (password !== ADMIN_PASSWORD) {
+        alert('Invalid password!');
+        return false;
+      }
+      
+      return true;
+    }
+    
+    function openAdmin() {
+      document.getElementById('adminPanel').style.display = 'block';
+      document.getElementById('bonusParam').value = BONUS_PARAM;
+      renderAdminDomainList();
+    }
+    
+    function closeAdmin() {
+      document.getElementById('adminPanel').style.display = 'none';
+    }
+    
+    function renderAdminDomainList() {
+      const list = document.getElementById('adminDomainList');
+      const countLabel = document.getElementById('domainCountLabel');
+      list.innerHTML = '';
+      
+      DOMAINS.forEach((domain, index) => {
+        const item = document.createElement('div');
+        item.className = 'domain-item';
+        item.innerHTML = `
+          <span style="color: var(--text); font-family: monospace;">${domain}</span>
+          <button onclick="removeDomain(${index})" class="remove-btn">Remove</button>
+        `;
+        list.appendChild(item);
+      });
+      
+      countLabel.textContent = `Current Domains (${DOMAINS.length} total):`;
+    }
+    
+    function addDomain() {
+      const input = document.getElementById('newDomain');
+      const domain = input.value.trim().toLowerCase();
+      
+      if (!domain) {
+        alert('Please enter a domain name!');
+        return;
+      }
+      
+      if (DOMAINS.includes(domain)) {
+        alert('Domain already exists!');
+        return;
+      }
+      
+      if (!domain.includes('.') || domain.includes(' ')) {
+        alert('Please enter a valid domain!');
+        return;
+      }
+      
+      DOMAINS.push(domain);
+      input.value = '';
+      renderAdminDomainList();
+      renderDynamicList(); // Update the main list
+      showSuccess(`${domain} added successfully!`);
+    }
+    
+    function removeDomain(index) {
+      const domain = DOMAINS[index];
+      if (confirm(`Are you sure you want to remove "${domain}"?`)) {
+        DOMAINS.splice(index, 1);
+        renderAdminDomainList();
+        renderDynamicList(); // Update the main list
+        showSuccess(`${domain} removed!`);
+      }
+    }
+    
+    function saveChanges() {
+      const newBonus = document.getElementById('bonusParam').value.trim();
+      if (newBonus) {
+        BONUS_PARAM = newBonus;
+        updatePrimary();
+        renderDynamicList();
+        showSuccess('Settings saved! Page updated.');
+      } else {
+        alert('Bonus parameter cannot be empty!');
+      }
+    }
+    
+    function exportData() {
+      const data = {
+        domains: DOMAINS,
+        bonusParam: BONUS_PARAM,
+        exportDate: new Date().toISOString(),
+        totalDomains: DOMAINS.length
+      };
+      
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `9kboss-domains-${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showSuccess('Domain data exported successfully!');
+    }
+    
+    function importData() {
+      document.getElementById('importFile').click();
+    }
+    
+    function clearAllDomains() {
+      if (confirm('⚠️ This will remove ALL domains! Are you absolutely sure?')) {
+        if (confirm('This action cannot be undone. Continue?')) {
+          DOMAINS = [];
+          renderAdminDomainList();
+          renderDynamicList();
+          showSuccess('All domains cleared!');
+        }
+      }
+    }
+    
+    // File import handler
+    document.getElementById('importFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data.domains && Array.isArray(data.domains)) {
+            DOMAINS = data.domains;
+            if (data.bonusParam) BONUS_PARAM = data.bonusParam;
+            document.getElementById('bonusParam').value = BONUS_PARAM;
+            renderAdminDomainList();
+            renderDynamicList();
+            showSuccess(`Imported ${data.domains.length} domains successfully!`);
+          } else {
+            alert('Invalid file format!');
+          }
+        } catch (error) {
+          alert('Error reading file: ' + error.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+    
+    // Admin access - Triple click logo
+    let clickCount = 0;
+    logoText.addEventListener('click', () => {
+      clickCount++;
+      setTimeout(() => clickCount = 0, 600);
+      
+      if (clickCount === 3) {
+        if (checkAdminAccess()) {
+          openAdmin();
+        }
+      }
+    });
+    
+    // Admin access - Keyboard shortcut Ctrl+Shift+A
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+        e.preventDefault();
+        if (checkAdminAccess()) {
+          openAdmin();
+        }
+      }
+    });
+    
+    // Admin access - URL parameter
+    if (window.location.search.includes('admin=true')) {
+      if (checkAdminAccess()) {
+        openAdmin();
+      }
+    }
+    
+    // Event listeners
+    copyBtn.addEventListener('click', copyAllLinks);
+    
+    toggleBtn.addEventListener('click', () => {
+      showParam = !showParam;
+      toggleBtn.textContent = showParam ? 'Hide Query Parameters' : 'Show Query Parameters';
+      updatePrimary();
+      
+      // Update static list URLs
+      const rows = document.querySelectorAll('#list .row');
+      rows.forEach((row, index) => {
+        const urlSmall = row.querySelector('.urlSmall');
+        const copyBtn = row.querySelector('.copy-btn');
+        const openLink = row.querySelector('a[target="_blank"]:not([data-url])');
+        
+        const domain = DOMAINS[index];
+        const newUrl = displayUrl(domain);
+        const newFullUrl = fullUrl(domain);
+        
+        urlSmall.textContent = newUrl;
+        copyBtn.setAttribute('data-url', newFullUrl);
+        if (openLink) openLink.href = newFullUrl;
+      });
+    });
+    
+    // Initialize
+    function init() {
+      updatePrimary();
+      // Static list already rendered in HTML, no need to call renderDynamicList initially
+      
+      const now = new Date();
+      const opts = {year:'numeric', month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'};
+      lastUpdated.textContent = `Last updated: ${now.toLocaleString(undefined, opts)}`;
+      
+      // Add event listeners to static copy buttons
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          const url = btn.getAttribute('data-url');
+          await copyToClipboard(url);
+          btn.textContent = '✓';
+          setTimeout(() => btn.textContent = 'Copy', 1200);
+        });
+      });
+      
+      // Add event listeners to static rows
+      document.querySelectorAll('#list .row').forEach((row, index) => {
+        row.addEventListener('click', async (e) => {
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+          const domain = DOMAINS[index];
+          const url = fullUrl(domain);
+          await copyToClipboard(url);
+          showSuccess(`${domain} copied!`);
+        });
+      });
+    }
+    
+    init();
+  </script>
+</body>
+</html>
